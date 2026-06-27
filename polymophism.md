@@ -82,6 +82,10 @@ Beep Beep
 Overriding → same method, different class behavior
 Overloading → same method, different inputs (concept only)
 Duck Typing → behavior matters, not type
+
+
+
+
 🧠 One-line definition
 
 👉 Polymorphism = same function name, different behavior in different situations.
