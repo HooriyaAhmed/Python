@@ -1,11 +1,18 @@
-Polymorphism in Python (Simple Explanation)
+Polymorphism in Python
+Overview
 
-Polymorphism means “one interface, many forms.”
-In simple words, it allows the same function or method to behave differently depending on the object.
+Polymorphism is one of the core concepts of Object-Oriented Programming (OOP).
+The word Polymorphism means “many forms”.
 
-🔹 1. Method Overriding (Run-time Polymorphism)
+In Python, it allows the same function or method name to behave differently depending on the object or input.
 
-👉 When a child class changes the behavior of a method that already exists in the parent class.
+Types of Polymorphism in Python
+
+Python supports polymorphism mainly in three ways:
+
+1. Method Overriding (Run-time Polymorphism)
+
+Method overriding occurs when a child class provides a specific implementation of a method that is already defined in its parent class.
 
 Example:
 class Animal:
@@ -20,22 +27,21 @@ class Cat(Animal):
     def sound(self):
         print("Cat meows")
 Usage:
-a1 = Dog()
-a1.sound()
+animals = [Dog(), Cat()]
 
-a2 = Cat()
-a2.sound()
+for animal in animals:
+    animal.sound()
 Output:
 Dog barks
 Cat meows
+Key Points:
+Same method name in parent and child classes
+Behavior depends on object type
+Happens at run-time
+2. Method Overloading (Simulated in Python)
 
-✔ Same method name (sound)
-✔ Different behavior in different classes
-
-🔹 2. Method Overloading (Concept in Python)
-
-👉 Same method name but different number of arguments.
-⚠️ Python does NOT support true overloading, but we can simulate it.
+Python does not support true method overloading.
+However, it can be simulated using default arguments or variable-length arguments.
 
 Example:
 class Calculator:
@@ -44,15 +50,18 @@ class Calculator:
 Usage:
 calc = Calculator()
 
-print(calc.add(2, 3))      # 5
-print(calc.add(2, 3, 4))    # 9
+print(calc.add(2, 3))
+print(calc.add(2, 3, 4))
+Output:
+5
+9
+Key Points:
+Same method name
+Different number of inputs handled using default parameters
+Not natively supported like Java/C++
+3. Duck Typing (Pythonic Polymorphism)
 
-✔ Same method name
-✔ Works with different inputs using default arguments
-
-🔹 3. Duck Typing (Python Special Feature 🐍)
-
-👉 “If it behaves like the required object, we use it.”
+In Python, the type of object is not important. What matters is whether the object has the required method or behavior.
 
 Example:
 class Dog:
@@ -62,7 +71,7 @@ class Dog:
 class Robot:
     def speak(self):
         print("Beep Beep")
-Function:
+Usage:
 def call_speak(obj):
     obj.speak()
 
@@ -71,14 +80,15 @@ call_speak(Robot())
 Output:
 Bark
 Beep Beep
+Key Points:
+No inheritance required
+Focus is on behavior, not object type
+Very flexible and widely used in Python
+Summary
+Type	Description	Support in Python
+Method Overriding	Child class modifies parent method	Yes
+Method Overloading	Same method, different parameters	Simulated
+Duck Typing	Behavior-based polymorphism	Yes
+Conclusion
 
-✔ No need for inheritance
-✔ Only method name matters, not object type
-
-🔷 Final Summary
-Method Overriding → same method, different class behavior
-Method Overloading → same method, different inputs (simulated in Python)
-Duck Typing → behavior matters, not object type
-🧠 Simple Definition
-
-👉 Polymorphism means the same method or function can work in different ways depending on the object.
+Polymorphism in Python enables flexible and reusable code by allowing the same interface to represent different underlying forms.
