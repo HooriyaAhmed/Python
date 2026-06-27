@@ -84,4 +84,4 @@ Overloading → same method, different inputs (concept only)
 Duck Typing → behavior matters, not type
 🧠 One-line definition
 
-👉 Polymorphism = same function name, different behavior in different situations
+👉 Polymorphism = same function name, different behavior in different situations.
